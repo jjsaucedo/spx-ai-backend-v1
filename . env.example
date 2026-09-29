@@ -1,0 +1,13 @@
+APP_NAME=SPX AI Backend V1
+ENVIRONMENT=development
+DEMO_MODE=true
+
+# OpenAI
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-5.5
+
+# During initial development:
+CORS_ORIGINS=*
+
+# Later replace with your Base44 domain:
+# CORS_ORIGINS=https://spx-pulse-ai.base44.app
