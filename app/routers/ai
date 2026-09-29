@@ -1,0 +1,20 @@
+from fastapi import APIRouter, HTTPException
+
+from app.services.openai_agent import spx_agent
+
+
+router = APIRouter(
+    prefix="/api/ai",
+    tags=["ai"],
+)
+
+
+@router.post("/analyze")
+async def analyze():
+    try:
+        return await spx_agent.analyze()
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=str(exc),
+        )
