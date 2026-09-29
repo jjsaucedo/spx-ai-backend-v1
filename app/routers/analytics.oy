@@ -1,0 +1,23 @@
+from fastapi import APIRouter
+
+
+router = APIRouter(
+    prefix="/api/analytics",
+    tags=["analytics"],
+)
+
+
+@router.get("/summary")
+async def summary():
+    # Placeholder until persistent database storage is added.
+    return {
+        "mode": "demo",
+        "total_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": 0,
+        "net_pnl": 0,
+        "profit_factor": None,
+        "max_drawdown": 0,
+        "note": "Persistent analytics database is planned for V1.1.",
+    }
